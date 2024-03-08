@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var categories = [String]()
-    @State private var showingAlert = false
+    @State private var showingAlert = false   
     var body: some View {
         NavigationView {
             List(categories, id: \.self) { category in
-                NavigationLink(destination: Text(category)) {
+                NavigationLink(destination: EntryView(category: category)) {
                     Text(category)
                 }
             }
